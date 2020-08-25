@@ -1,0 +1,54 @@
+extends layout
+
+block content
+  h1= title
+  div
+    form(action="/new_student" method="POST")
+      table.table.table-striped
+        tr
+          th 
+            p Nombre:
+          th 
+            input(type="text" name="nombre" placeholder="Ingrese su nombre")
+        tr
+          th
+            p Carné:
+          th 
+            input(type="text" name="carnet" placeholder="Ingrese el carnet")
+        tr
+          th
+            p DPI:
+          th
+            input(type="text" name="dpi" placeholder="Inserte el CUI")
+        tr
+          th
+            p Semestre
+          th
+            input(type="text" name="semestre" placeholder="Semetre de solicitud")
+        tr
+          th
+            p Año:
+          th
+            input(type="text" name="anio" placeholder="Año de Solicitud")
+        tr
+          th
+            p Grupo:
+          th
+            input(type="text" name="grupo" placeholder="Grupo al que pertenece el estudiante")
+        tr
+          th
+            p Correo:
+          th
+            input(type="text" name="correo" placeholder="Correo del estudiante")
+        tr
+          th
+          th
+            input(type="submit" value="Ingresar Estudiante" class="btn btn-success")
+        tr
+          th
+            a(href='/group' class="btn btn-info") Buscar por Grupo
+          th
+            a(href='/search' class="btn btn-secondary") Buscar Estudiantes
+
+
+

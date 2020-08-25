@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  h1= title
+  div
+    form(action="/busca/grupo" method="POST")
+      table.table.table-striped
+        tr
+          th
+            p Grupo:
+          th
+            input(type="text" name="grupo" placeholder="Ingrese el grupo")
+        tr
+          th
+          th
+            input(type="submit" value="Consultar Estudiantes del grupo" class="btn btn-primary")
+

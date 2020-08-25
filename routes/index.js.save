@@ -1,0 +1,26 @@
+var express = require('express');
+var router = express.Router();
+var mongoose = require("mongoose");
+
+//connecting to db
+mongoose.Promise = global.Promise;
+mongoose.connect('mongodb://34.67.137.252:27017/coronavirus',{useNewUrlParser: true}).then(()=>{
+    console.log('conexion exitosa a bd');
+    app.listen(port,()=>{
+        console.log('servidor corriendo 3000')
+    })
+
+}).catch(err=>console.log(err));
+
+const Stud = require('../models/students');
+
+/* GET home page. */
+router.get('/', function(req, res, next) {
+  res.render('index', { title: 'Ingreso de Datos - IA' });
+});
+
+router.get('/new_student', function(req, res, next) {
+  console.log("Nuevo estudiante creado");
+  res.render('index', { title: 'Ingreso de Datos - IA' });
+});
+module.exports = router;

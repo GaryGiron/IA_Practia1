@@ -1,0 +1,17 @@
+extends layout
+
+block content
+ div.container
+  h1= title
+  div
+   h2 Ver Estudiantes
+   table.table.table-striped
+    for student in estudiantes
+     tr
+      td= student.nombre
+      td= student.carnet
+      td= student.dpi
+      td= student.semestre
+      td= student.anio
+      td= student.grupo
+      td= student.correo

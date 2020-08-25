@@ -1,0 +1,26 @@
+extends layout
+
+block content
+  h1= title
+  div
+    form(action="/busca/student" method="POST")
+      table.table.table-striped
+        tr
+          th
+            p Carné:
+          th 
+            input(type="text" name="carne" placeholder="Ingrese el carnet")
+        tr
+          th
+            p Semestre
+          th
+            input(type="text" name="semestre" placeholder="Semetre de solicitud")
+        tr
+          th
+            p Año:
+          th
+            input(type="text" name="anio" placeholder="Año de Solicitud")
+        tr
+          th
+          th
+            input(type="submit" value="Consultar Estudiante" class="btn btn-primary")
