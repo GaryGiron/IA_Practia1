@@ -14,4 +14,10 @@ block content
           th
           th
             input(type="submit" value="Consultar Estudiantes del grupo" class="btn btn-primary")
+  div.contains
+   p=result
+  div
+   h3 Ver Estudiantes
+   for student in estudiantes
+    p= student.carnet+" "+student.correo
 

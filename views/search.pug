@@ -24,3 +24,17 @@ block content
           th
           th
             input(type="submit" value="Consultar Estudiante" class="btn btn-primary")
+  div.contains
+   p=result
+  h3 Ver Estudiantes	
+  table.table.table-striped
+   for student in estudiantes
+    tr
+     td= student.nombre
+     td= student.carnet
+     td= student.dpi
+     td= student.semestre
+     td= student.anio
+     td= student.grupo
+     td= student.correo
+

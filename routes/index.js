@@ -17,11 +17,15 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/search', function(req, res, next) {
-  res.render('search', { title: 'Buscar Esudiante' });
+  var est=[];
+  var rest="";
+  res.render('search', { title: 'Buscar Estudiante', estudiantes: est, result:rest});
 });
 
 router.get('/group', function(req, res, next) {
-  res.render('group', { title: 'Buscar Esudiante por Grupo' });
+  var est=[];
+  var rest="";
+  res.render('group', { title: 'Buscar Estudiante por Grupo', estudiantes:est, result:rest });
 });
 
 router.post('/new_student', (req, res, next) => {
@@ -57,7 +61,11 @@ router.post('/busca/student', async (req, res, next) =>{
     anio: req.body.anio
   });
   console.log(query);
-  res.render('lista', { title: 'Estudiantes Encontrados', estudiantes: query});
+  var rest="NoExiste";
+  if(query.length>0){
+   rest="Existe";
+  }
+  res.render('search', { title: 'Estudiantes Encontrados', estudiantes: query, result:rest});
 });
 
 router.post('/busca/grupo', async (req, res, next) =>{
@@ -67,7 +75,11 @@ router.post('/busca/grupo', async (req, res, next) =>{
     grupo: req.body.grupo
   });
   console.log(query);
-  res.render('lista', { title: 'Estudiantes Encontrados Pertenecientes al grupo '+req.body.grupo, estudiantes: query});
+  var rest="NoExiste";
+  if(query.length>0){
+   rest="Existe";
+  }
+  res.render('group', { title: 'Estudiantes Encontrados Pertenecientes al grupo '+req.body.grupo, estudiantes: query, result:rest});
 });
 
 
